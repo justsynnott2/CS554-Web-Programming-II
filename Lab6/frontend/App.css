@@ -1,0 +1,230 @@
+:root{
+  --header-h: 160px;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.App-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  background-color: red;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  z-index: 1000;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.App-title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.center {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.navlink {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  background: black;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+/* General Layout and Background */
+body {
+    background-color: #333; /* Dark gray background */
+    color: white; /* Default text color */
+    font-family: sans-serif;
+}
+
+.allTrainers {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header/Navigation Bar Styling (based on the red bar in the screenshot) */
+/* You'll likely need a separate component for this, but for context: */
+.header-bar {
+    background-color: #d9534f; /* Strong Red */
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px; /* Space between header and content */
+}
+
+/* Add Trainer Button Styling (Matching the Red Box) */
+.addTrainer {
+    background-color: #d9534f; /* A strong red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 30px; /* Space below the button */
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+}
+
+/* --- Trainer Section Layout --- */
+
+/* Parent container for all trainers */
+.trainerList {
+    display: flex; /* Use flexbox to line up trainer sections horizontally */
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: 40px; /* Space between different trainer sections (Red, Blue, Green) */
+    padding: 0 20px;
+}
+
+/* Individual Trainer Section (The <section> tag) */
+.trainerList section {
+    /* Each section is a self-contained block */
+    display: block; 
+    text-align: left; /* Align content inside the section to the left */
+}
+
+/* Trainer Manager (Trainer Name and Buttons) */
+.trainerManager {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between name and buttons */
+    margin-bottom: 10px;
+}
+
+.trainerManager h3 {
+    font-size: 1.2em; /* Smaller size to match screenshot */
+    font-weight: bold;
+    color: white; /* Trainer name should be white */
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+
+/* Button Styling (Delete/Select Trainer) */
+.trainerManager button {
+    border: none;
+    padding: 5px 10px; /* Smaller padding */
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+}
+
+/* SELECT TRAINER / DELETE TRAINER Buttons (Orange/Default) */
+.trainerManager button:not(:first-child) {
+    background-color: #f0ad4e; /* Orange/Yellow color */
+    color: black;
+}
+
+.trainerManager button:not(:first-child):hover {
+    background-color: #ec971f;
+}
+
+/* SELECTED Button (The red box for the active trainer) */
+/* This matches the 'SELECTED' button for trainer Red */
+.trainerManager button:first-child[onClick*="handleUnselectTrainer"] {
+    background-color: #f0ad4e; /* Use the same orange as other buttons */
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid #333; /* Optional: border to make it pop */
+}
+
+
+/* --- Pokémon Team Layout --- */
+
+/* Trainer Team Container (The horizontal row of Pokémon cards) */
+.trainerTeam {
+    display: flex; /* Line up Pokémon cards horizontally */
+    gap: 10px; /* Space between Pokémon cards */
+    padding-bottom: 20px; 
+}
+
+/* Pokémon Card/Image Container */
+.trainerTeam > div {
+    width: 100px; /* Smaller fixed width for the card (adjust as needed) */
+    height: 100px; /* Fixed height for the card (adjust as needed) */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden; 
+}
+
+/* Pokémon Image Styling */
+.trainerTeam img {
+    max-width: 90%; /* Keep image slightly smaller than the box */
+    max-height: 90%;
+    object-fit: contain; 
+    display: block; 
+}

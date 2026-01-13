@@ -1,0 +1,17 @@
+{
+  "name": "cs554lab3",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Justin Synnott 20014172",
+  "license": "ISC",
+  "description": "My Lab 3 Module",
+  "dependencies": {
+    "@apollo/server": "^5.0.0",
+    "graphql": "^16.11.0",
+    "mongodb": "^6.20.0"
+  }
+}
